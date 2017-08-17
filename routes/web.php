@@ -11,6 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'HomeController@index');
+
+
+Route::get('/{name}', function ($name = 'chinthu') {
+    return $name;
+    //return view('welcome');
 });
+
+Route::get('/test',function(){
+   return 'testing'; 
+});
+
+Route::get('user/{id}', 'UserController@show');
+
+
+Route::resource('images', 'ImageController');
